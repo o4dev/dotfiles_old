@@ -68,6 +68,10 @@ mkdir -p $HOME/.config/gtk-3.0
 backup .config/gtk-3.0/settings.ini
 ln -s $DOTFILES/gtk-3.0-settings.ini $HOME/.config/gtk-3.0/settings.ini
 
+# Xfce4-terminal setup
+mkdir -p $HOME/.config/xfce4/terminal
+backup $HOME/.config/xfce4/terminal/terminalrc
+ln -s $DOTFILES/terminalrc  $HOME/.config/xfce4/terminal
 
 # Use zsh as default shell
 chsh -s /bin/zsh
