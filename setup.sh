@@ -36,7 +36,7 @@ backup(){
 
 
 # Create a symbolic link for the standard configs
-configs=(.zshrc .vimrc .conkyrc .tmux.conf .i3status.conf .mpdconf .i3)
+configs=(.zshrc .vimrc .conkyrc .tmux.conf .i3status.conf .mpdconf .i3 .ncmpcpp)
 for config in $configs; do
     backup $config
     ln -s $DOTFILES/$config $HOME/$config
@@ -50,10 +50,6 @@ ln -s $DOTFILES/af-magic-mod.zsh-theme $HOME/.oh-my-zsh/themes
 # Setup vim plugins etc
 backup .vim
 cp -r $DOTFILES/.vim $HOME/.vim
-
-# Setup ncmpcpp
-backup .ncmpcpp
-cp -r $DOTFILES/.ncmpcpp $HOME
 
 # GTK Setup
 
