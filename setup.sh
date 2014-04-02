@@ -4,14 +4,14 @@
 #
 #
 
-REPOURL=
+REPOURL=https://github.com/o4dev/dotfiles.git
 DOTFILES=$HOME/.dotfiles
 
 set -e
 
 echo 'Installing dependencies...'
 # Assume debian based and install dependencies
-sudo apt-get install zsh vim i3 xfce4-terminal mpv conky tmux xfonts-terminus luakit
+sudo apt-get install git zsh vim i3 xfce4-terminal mpv conky tmux xfonts-terminus luakit
 
 # Clone oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
