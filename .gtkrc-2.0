@@ -1,0 +1,11 @@
+include "/home/luke/.themes/OMG-Dark/gtk-2.0/gtkrc"
+
+style "user-font" {
+	font_name = "Terminus Medium 12"
+}
+
+widget_class "*" style "user-font"
+
+gtk-font-name="Terminus Medium 12"
+
+
