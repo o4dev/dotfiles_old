@@ -1,0 +1,63 @@
+# ~/.conkyrc
+#
+double_buffer yes
+background yes
+
+use_xft yes
+xftfont Terminus:size=12
+xftalpha 0.8
+
+update_interval 1.0
+ 
+total_run_times 0
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_colour 202020
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+
+minimum_size 80 5
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_margin 6
+border_width 1
+default_color slategrey 
+default_shade_color lightgrey
+default_outline_color white
+alignment top_right
+gap_x 20
+gap_y 20
+no_buffers yes
+uppercase no
+
+TEXT
+
+${color slate grey}
+${stippled_hr 2 1}
+Mpd: ${mpd_status}
+${mpd_smart 30} 
+${mpd_elapsed} / ${mpd_length} - Rnd:${mpd_random} Rpt:${mpd_repeat}
+${mpd_bar}
+${color slate grey}${stippled_hr 2 1}
+${color}host  :${color white} something # ${nodename}
+ 
+${color}os    :${color white} ${sysname} ${kernel}
+${color}clock :${color white} ${freq}Mhz ${color white}
+$hr
+${color}uptime:${color white} $uptime ${color white}
+$stippled_hr
+${color}cpu   :${color white} $cpu% $cpubar
+${color}ram   :${color white} $memperc% $membar
+$stippled_hr
+${color}/      : ${color white}${fs_free /} ${fs_bar /} 
+${color}/home  : ${color white}${fs_free /home} ${fs_bar /home}
+$stippled_hr
+${color}date : ${color white}${time %a,} ${time %B %e %G}
+${color}time : ${color white}${time %H:%M:%S} ${color white}
+$hr
+${color}down:${color white} ${downspeed wlan1} k/s ${color}  up:${color white} ${upspeed wlan1} k/s
+#${color #888888}${downspeedgraph wlan1 20,70 ff0000 0000ff}   ${color #888888}${upspeedgraph wlan1 20,70 0000ff ff0000}
+
