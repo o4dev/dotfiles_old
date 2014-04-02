@@ -60,7 +60,7 @@ ln -s $DOTFILES/.themes/OMG-Dark $HOME/.themes
 
 # Link gtk 2 config
 backup .gtk-2.0
-ln -s $DOTFILE/.gtkrc-2.0 $HOME
+ln -s $DOTFILES/.gtkrc-2.0 $HOME
 
 # Link gtk 3 config
 mkdir -p $HOME/.config/gtk-3.0
