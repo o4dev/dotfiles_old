@@ -16,7 +16,21 @@ isenv(){
 }
 
 # primary prompt
-PROMPT='$FG[237]--------------------------------------------------$fg[cyan]`date +%H:%M:%S`$FG[237]--%{$reset_color%}
+
+DATE='%H:%M:%S'
+
+showDate(){
+    [[ ${#DATE}+3 -lt $COLUMNS ]] && return $?
+}
+prompt(){
+    printf -%.0s {1..${$((($COLUMNS-$(showDate && echo ${#DATE} || echo 0 )) * $1))%.*}}
+}
+
+PROMPT='\
+$FG[237]`prompt 0.7`\
+$fg[cyan]`showDate && date +$DATE`\
+$FG[237]`prompt 0.2`\
+
 %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
